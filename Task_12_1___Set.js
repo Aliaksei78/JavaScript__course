@@ -22,10 +22,12 @@ for (let elem of currencySet.values()) { console.log(elem) };  // the same as fo
 console.log('_______________Task_3______________');
 currencySet.add("GBR");
 currencySet.forEach(elem => console.log(elem));
-currencySet.add("USD");
+currencySet.add("USD");                                                                  // "USD" already exist, idle call
 currencySet.forEach(elem => console.log(elem));
-currencySet.add('CAD', 'NZD');
-currencySet.forEach((elem, another_elem, set) => console.log(elem, another_elem, set));  // elem==another_elem it's for work wit Map
+currencySet.add('CAD').add('NZD');
+currencySet.forEach(elem => console.log(elem));
+currencySet.forEach((elem, another_elem, set) => console.log(elem, another_elem, set));  // elem==another_elem only for Set, it's for work with Map
+// for other collections forEach(elem, index, set)
 
 
 console.log('_______________Task_4______________');
