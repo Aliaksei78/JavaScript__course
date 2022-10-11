@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "javascript__course",
+  "version": "1.0.0",
+  "description": "Student Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexei Revenko",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.8"
+  }
+}
