@@ -1,0 +1,22 @@
+{
+  "base": "USD",
+  "date": "2022-10-14",
+  "rates": [
+    {
+      "shortName": "CAD",
+      "rate": 1.3725557
+    },
+    {
+      "shortName": "CHF",
+      "rate": 0.99669536
+    },
+    {
+      "shortName": "EUR",
+      "rate": 1.0228934
+    },
+    {
+      "shortName": "GBP",
+      "rate": 0.88523963
+    }
+  ]
+}
