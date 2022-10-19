@@ -16,7 +16,24 @@ if (age <= 12) {
 }
 
 
-// Using 'switch case' is possible for this task but it is not rational:
+// Using 'switch case' this way is possible but 'if else' is better for current task:
+switch (true) {
+    case (age <= 12):
+        console.log(`Your age ${age} years, you are child`);
+        break;
+    case (age >= 13 && age <= 17):
+        console.log(`Your age ${age} years, you are teen`);
+        break;
+    case (age >= 18 && age <= 64):
+        console.log(`Your age ${age} years, you are adult`);
+        break;
+    case (age >= 65):
+        console.log(`Your age ${age} years, you are senior`);
+        break;
+}
+
+
+// Using 'switch case' this way is possible for current task but it is not rational:
 switch (age) {
     case 0:
     case 1:
