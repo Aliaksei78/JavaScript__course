@@ -6,7 +6,7 @@ describe('Task 19.3a Asynchrony', () => {
     it('cy.request into "it + new Promise() separated"', () => {
 
         const products = new Promise((resolve, reject) => {
-            cy.request('https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916').then(response => {
+            cy.request('https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1666611355').then(response => {
                 console.clear()
                 if (response.body["products"]) {
                     resolve(response.body["products"])

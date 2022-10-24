@@ -4,7 +4,7 @@
 describe('Task 19.1 Asynchrony', () => {
 
     it('cy.request into "it"', () => {
-        cy.request('https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916').then(response => {
+        cy.request('https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1666611355').then(response => {
             cy.wrap(response.body["products"]).as('products')
             console.clear()
         })
