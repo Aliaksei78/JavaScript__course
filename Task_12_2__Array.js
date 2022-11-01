@@ -85,8 +85,7 @@ printNewPlanets(getPlanetsWithDistance(new_planets, 5));
 
 console.log('\n___________________________________Task_6__________________________________');
 const deletePlanetByName = ((array, planetName) => {
-    let planetNameValues = array.map(planet => planet.planet);
-    let index = planetNameValues.indexOf(planetName);
+    let index = array.findIndex(planet => planet.planet === planetName);
     if (index != -1) {
         array.splice(index, 1)
     }
