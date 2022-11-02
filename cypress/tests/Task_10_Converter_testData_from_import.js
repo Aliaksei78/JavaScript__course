@@ -3,24 +3,19 @@
 import MainPage from "../pageObjects/mainPage"
 import ConvertPage from "../pageObjects/convertPage"
 import Chance from 'chance'
-
+import userCurrency from '../fixtures/currency.json'                            // The best way for using all data from array
 
 describe("Converter e2e test", () => {
-    beforeEach(function () {
-        cy.fixture('currency').then(currensy => {
-            this.currency = currensy;                        // now 'this.currency' visible for tests BUT ARROW FUNCTIONS DO NOT BE EXIST in 'before()' 
-        });                                                  // and 'it()' in this case  https://docs.cypress.io/api/commands/fixture#this-context
-    });
 
-    it("Task 10 one", function () {
-        let targetCurrency = Chance().pickone(this.currency.rates);
+    it("Task 10 - one randon target currency", function () {
+        let targetCurrency = Chance().pickone(userCurrency.rates);              // No problems for using one set data from array
 
         cy.log('GIVEN User is at Main Page:');
         MainPage.open();
 
         cy.log('WHEN User selects needed currencies:')
         MainPage.getInputAmount.click().clear().type(1);
-        MainPage.getSelectFrom.type(this.currency.base).type(`{enter}`);
+        MainPage.getSelectFrom.type(userCurrency.base).type(`{enter}`);
         MainPage.getSelectTo.type(targetCurrency.shortName).type(`{enter}`);
         MainPage.getButtonConvert.click();
 
@@ -31,15 +26,14 @@ describe("Converter e2e test", () => {
     });
 
 
-    it("Task 10 scope", function () {
-        let scopeTargetCurrency = this.currency.rates;
-        scopeTargetCurrency.forEach((targetCurrency) => {
+    userCurrency.rates.forEach((targetCurrency) => {                               // No problems for using all data from array
+        it(`Task 10 - scope: ${targetCurrency.shortName}`, function () {
             cy.log('GIVEN User is at Main Page:');
             MainPage.open();
 
             cy.log('WHEN User selects needed currencies:')
             MainPage.getInputAmount.click().clear().type(1);
-            MainPage.getSelectFrom.type(this.currency.base).type(`{enter}`);
+            MainPage.getSelectFrom.type(userCurrency.base).type(`{enter}`);
             MainPage.getSelectTo.type(targetCurrency.shortName).type(`{enter}`);
             MainPage.getButtonConvert.click();
 
